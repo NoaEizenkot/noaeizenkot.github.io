@@ -1,97 +1,96 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
   <title>Noa Eizenkot | Portfolio</title>
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600&display=swap" rel="stylesheet">
   <style>
-    body {
-      font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-      margin: 0;
-      padding: 0;
-      background: #f4f4f9;
-      color: #333;
-      line-height: 1.6;
+    :root{
+      --blue:#3b82f6;
+      --purple:#a855f7;
+      --ink:#2c3e50;
+      --paper:#ffffff;
+      --soft:#f6f7fb;
+      --lav:#ede9fe;
     }
-    header {
-      background: linear-gradient(135deg, #4b6cb7, #6a3093);
-      color: #fff;
-      text-align: center;
-      padding: 60px 20px;
+    *{box-sizing:border-box}
+    html,body{
+      margin:0; padding:0; font-family:'Poppins',system-ui,-apple-system,Segoe UI,Roboto,Helvetica,Arial,sans-serif;
+      color:var(--ink); background:var(--soft); line-height:1.65;
     }
-    header h1 {
-      margin: 0;
-      font-size: 3rem;
+    header{
+      position:relative;
+      color:#fff;
+      text-align:center;
+      padding:72px 20px 110px;
+      background: radial-gradient(1200px 600px at 10% 0%, rgba(255,255,255,.20) 0%, rgba(255,255,255,0) 60%),
+                  linear-gradient(135deg, var(--blue) 0%, var(--purple) 100%);
+      overflow:hidden;
     }
-    header p {
-      font-size: 1.3rem;
-      margin-top: 10px;
+    header::before, header::after{
+      content:""; position:absolute; border-radius:999px; filter:blur(30px); opacity:.25;
     }
-    nav {
-      background: #2c3e50;
-      display: flex;
-      justify-content: center;
+    header::before{
+      width:220px; height:220px; right:8%; top:12%;
+      background:linear-gradient(135deg,#fff, #d9d4ff);
     }
-    nav a {
-      color: #fff;
-      padding: 15px 25px;
-      text-decoration: none;
-      font-weight: bold;
-      transition: 0.3s;
+    header::after{
+      width:160px; height:160px; left:6%; bottom:24%;
+      background:linear-gradient(135deg,#fff, #cde2ff);
     }
-    nav a:hover {
-      background: #6a3093;
-      color: #fff;
+    header h1{
+      margin:0 0 8px; font-size:3rem; font-weight:600; letter-spacing:.5px;
     }
-    section {
-      padding: 50px 20px;
-      max-width: 900px;
-      margin: auto;
+    header p{
+      margin:0 auto; font-size:1.1rem; max-width:760px; opacity:.95;
     }
-    h2 {
-      color: #4b6cb7;
-      margin-bottom: 20px;
-      border-bottom: 2px solid #6a3093;
-      display: inline-block;
-      padding-bottom: 5px;
+    .hero-wave{
+      position:absolute; left:0; right:0; bottom:-1px; line-height:0;
     }
-    .project {
-      background: #fff;
-      margin-bottom: 25px;
-      padding: 25px;
-      border-radius: 10px;
-      box-shadow: 0px 4px 8px rgba(0,0,0,0.1);
-      transition: 0.3s;
+    .hero-wave svg{ display:block; width:100%; height:80px; }
+    .hero-wave path{ fill:var(--paper); }
+
+    nav{
+      position:sticky; top:0; z-index:20;
+      background:#ffffffcc; backdrop-filter:saturate(140%) blur(6px);
+      display:flex; justify-content:center; gap:12px; padding:10px 14px; border-bottom:1px solid #eef0f6;
     }
-    .project:hover {
-      transform: scale(1.02);
-      box-shadow: 0px 6px 15px rgba(0,0,0,0.2);
+    nav a{
+      color:var(--ink); text-decoration:none; font-weight:600; padding:10px 16px; border-radius:999px;
+      transition:transform .15s ease, background .2s ease, color .2s ease;
     }
-    .project h3 {
-      color: #6a3093;
-      margin-top: 0;
+    nav a:hover{ background:var(--lav); color:#5b21b6; transform:translateY(-1px); }
+
+    section{ padding:48px 20px; max-width:960px; margin:0 auto; }
+    h2{
+      display:inline-block; margin:0 0 18px; font-size:1.6rem; font-weight:600; color:#4b6cb7;
+      border-bottom:3px solid var(--purple); padding-bottom:6px; border-radius:2px;
     }
-    ul {
-      list-style-type: square;
-      padding-left: 20px;
+
+    .card, .project{
+      background:var(--paper); border-radius:14px; padding:24px; margin:18px 0;
+      box-shadow:0 10px 20px rgba(76, 29, 149, .06);
+      transition:transform .18s ease, box-shadow .18s ease;
     }
-    footer {
-      text-align: center;
-      background: linear-gradient(135deg, #6a3093, #4b6cb7);
-      color: #fff;
-      padding: 20px;
-      margin-top: 40px;
+    .project:hover{ transform:translateY(-3px); box-shadow:0 16px 28px rgba(76,29,149,.10); }
+    .project h3{ margin:0 0 8px; color:#6a3093; }
+
+    ul{ padding-left:20px; margin:0; }
+    li{ margin:6px 0; }
+
+    a{ color:#4b6cb7; font-weight:600; text-decoration:none; }
+    a:hover{ color:#6a3093; }
+
+    footer{
+      text-align:center; color:#fff; padding:20px; margin-top:40px;
+      background:linear-gradient(135deg, var(--purple), var(--blue));
     }
-    footer p {
-      margin: 0;
-    }
-    a {
-      color: #4b6cb7;
-      font-weight: bold;
-      text-decoration: none;
-    }
-    a:hover {
-      color: #6a3093;
+
+    @media (max-width:640px){
+      header h1{ font-size:2.2rem; }
+      header p{ font-size:1rem; }
     }
   </style>
 </head>
@@ -99,7 +98,12 @@
 
   <header>
     <h1>Noa Eizenkot</h1>
-    <p>Industrial Engineering & Management | Data & Information Systems</p>
+    <p>Industrial Engineering &amp; Management • Data &amp; Information Systems • PMO &amp; ERP</p>
+    <div class="hero-wave" aria-hidden="true">
+      <svg viewBox="0 0 1440 80" preserveAspectRatio="none">
+        <path d="M0,64 C240,16 480,16 720,48 C960,80 1200,80 1440,48 L1440,160 L0,160 Z"></path>
+      </svg>
+    </div>
   </header>
 
   <nav>
@@ -109,54 +113,15 @@
     <a href="#contact">Contact</a>
   </nav>
 
-  <section id="about">
+  <section id="about" class="card">
     <h2>About Me</h2>
     <p>
-      B.Sc. graduate in Industrial Engineering & Management (Big Data specialization).  
-      4 years of experience as PMO & Budget Control in defense and civilian projects.  
-      Skilled in data analysis, BI tools, and ERP/CRM systems (SAP, Priority).  
-      Passionate about combining project management with data-driven decision making.
+      B.Sc. graduate in Industrial Engineering and Management with a specialization in Big Data.
+      Skilled in SQL, Power BI, and Jupyter Notebook with Python for machine learning projects.
+      Experienced with ERP systems (SAP, Priority) to support project management and control.
+      Passionate about data analysis and integrating it into project management practices.
     </p>
   </section>
 
   <section id="projects">
     <h2>Projects</h2>
-
-    <div class="project">
-      <h3>CyberEye – CVSS Prediction Model</h3>
-      <p>Machine Learning model predicting CVSS severity from NVD vulnerability descriptions using Decision Trees, Random Forest, and NLP (TF-IDF).</p>
-    </div>
-
-    <div class="project">
-      <h3>CNN Dog Classification</h3>
-      <p>Image classification system for 6 dog breeds using CNN, TensorFlow/Keras, and data augmentation techniques.</p>
-    </div>
-
-    <div class="project">
-      <h3>ERP SAP Implementation (Course Project)</h3>
-      <p>Business process analysis and ERP SAP FI/MM/SD module implementation in a defense-industrial organization.</p>
-    </div>
-  </section>
-
-  <section id="skills">
-    <h2>Skills</h2>
-    <ul>
-      <li>SQL | Python | Power BI | Advanced Excel</li>
-      <li>ERP Systems: SAP, Priority</li>
-      <li>Project Management: PMO, Gantt, Risk Matrix, RACI</li>
-    </ul>
-  </section>
-
-  <section id="contact">
-    <h2>Contact</h2>
-    <p>Email: <a href="mailto:your.email@example.com">your.email@example.com</a></p>
-    <p>LinkedIn: <a href="https://linkedin.com/in/yourprofile" target="_blank">linkedin.com/in/yourprofile</a></p>
-    <p>GitHub: <a href="https://github.com/NoaEizenkot" target="_blank">github.com/NoaEizenkot</a></p>
-  </section>
-
-  <footer>
-    <p>&copy; 2025 Noa Eizenkot. All rights reserved.</p>
-  </footer>
-
-</body>
-</html>
