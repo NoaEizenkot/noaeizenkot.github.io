@@ -8,102 +8,64 @@
   <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600&display=swap" rel="stylesheet">
   <style>
     :root{
-      --blue:#3b82f6;
-      --purple:#a855f7;
-      --ink:#2c3e50;
+      --lavender:#ede9fe;
+      --lilac:#c4b5fd;
+      --soft-grey:#f5f5f5;
+      --ink:#2c2c2c;
       --paper:#ffffff;
-      --soft:#f6f7fb;
-      --lav:#ede9fe;
     }
     *{box-sizing:border-box}
     html,body{
-      margin:0; padding:0; font-family:'Poppins',system-ui,-apple-system,Segoe UI,Roboto,Helvetica,Arial,sans-serif;
-      color:var(--ink); background:var(--soft); line-height:1.65;
+      margin:0; padding:0; font-family:'Poppins',sans-serif;
+      color:var(--ink); background:var(--soft-grey); line-height:1.65;
     }
     header{
-      position:relative;
-      color:#fff;
-      text-align:center;
-      padding:72px 20px 110px;
-      background: radial-gradient(1200px 600px at 10% 0%, rgba(255,255,255,.20) 0%, rgba(255,255,255,0) 60%),
-                  linear-gradient(135deg, var(--blue) 0%, var(--purple) 100%);
-      overflow:hidden;
+      background:linear-gradient(135deg, var(--lavender), var(--lilac));
+      color:#333; text-align:center; padding:70px 20px 100px; position:relative;
     }
-    header::before, header::after{
-      content:""; position:absolute; border-radius:999px; filter:blur(30px); opacity:.25;
-    }
-    header::before{
-      width:220px; height:220px; right:8%; top:12%;
-      background:linear-gradient(135deg,#fff, #d9d4ff);
-    }
-    header::after{
-      width:160px; height:160px; left:6%; bottom:24%;
-      background:linear-gradient(135deg,#fff, #cde2ff);
-    }
-    header h1{
-      margin:0 0 8px; font-size:3rem; font-weight:600; letter-spacing:.5px;
-    }
-    header p{
-      margin:0 auto; font-size:1.1rem; max-width:760px; opacity:.95;
-    }
-    .hero-wave{
-      position:absolute; left:0; right:0; bottom:-1px; line-height:0;
-    }
-    .hero-wave svg{ display:block; width:100%; height:80px; }
-    .hero-wave path{ fill:var(--paper); }
-
+    header h1{margin:0;font-size:2.8rem;font-weight:600;}
+    header p{margin:10px auto 0;font-size:1.2rem;max-width:700px;opacity:.9;}
+    .hero-wave{position:absolute;left:0;right:0;bottom:-1px;line-height:0;}
+    .hero-wave svg{display:block;width:100%;height:80px;}
+    .hero-wave path{fill:var(--paper);}
     nav{
-      position:sticky; top:0; z-index:20;
-      background:#ffffffcc; backdrop-filter:saturate(140%) blur(6px);
-      display:flex; justify-content:center; gap:12px; padding:10px 14px; border-bottom:1px solid #eef0f6;
+      background:#fff8; backdrop-filter:blur(6px);
+      display:flex;justify-content:center;gap:20px;padding:12px 18px;
+      border-bottom:1px solid #e5e5e5;position:sticky;top:0;z-index:20;
     }
     nav a{
-      color:var(--ink); text-decoration:none; font-weight:600; padding:10px 16px; border-radius:999px;
-      transition:transform .15s ease, background .2s ease, color .2s ease;
+      color:#4b3f72;text-decoration:none;font-weight:600;padding:8px 14px;
+      border-radius:999px;transition:0.3s;
     }
-    nav a:hover{ background:var(--lav); color:#5b21b6; transform:translateY(-1px); }
-
-    section{ padding:48px 20px; max-width:960px; margin:0 auto; }
-    h2{
-      display:inline-block; margin:0 0 18px; font-size:1.6rem; font-weight:600; color:#4b6cb7;
-      border-bottom:3px solid var(--purple); padding-bottom:6px; border-radius:2px;
+    nav a:hover{background:var(--lavender);color:#2c2c2c;}
+    section{padding:50px 20px;max-width:900px;margin:0 auto;text-align:center;}
+    section h2{
+      font-size:1.6rem;color:#4b3f72;margin-bottom:20px;display:inline-block;
+      border-bottom:3px solid var(--lilac);padding-bottom:6px;
     }
-
-    .card, .project{
-      background:var(--paper); border-radius:14px; padding:24px; margin:18px 0;
-      box-shadow:0 10px 20px rgba(76, 29, 149, .06);
-      transition:transform .18s ease, box-shadow .18s ease;
+    section p, section ul{
+      text-align:left;max-width:700px;margin:0 auto;
     }
-    .project:hover{ transform:translateY(-3px); box-shadow:0 16px 28px rgba(76,29,149,.10); }
-    .project h3{ margin:0 0 8px; color:#6a3093; }
-
-    ul{ padding-left:20px; margin:0; }
-    li{ margin:6px 0; }
-
-    a{ color:#4b6cb7; font-weight:600; text-decoration:none; }
-    a:hover{ color:#6a3093; }
-
+    .card,.project{
+      background:var(--paper);border-radius:12px;padding:24px;margin:18px 0;
+      box-shadow:0 6px 14px rgba(0,0,0,0.05);transition:0.3s;
+    }
+    .project:hover{transform:translateY(-3px);box-shadow:0 10px 20px rgba(0,0,0,0.08);}
+    .project h3{margin:0 0 8px;color:#4b3f72;}
+    ul{list-style-type:square;padding-left:20px;}
+    a{color:#4b3f72;font-weight:600;text-decoration:none;}
+    a:hover{color:#6d28d9;}
     footer{
-      text-align:center; color:#fff; padding:20px; margin-top:40px;
-      background:linear-gradient(135deg, var(--purple), var(--blue));
-    }
-
-    @media (max-width:640px){
-      header h1{ font-size:2.2rem; }
-      header p{ font-size:1rem; }
+      text-align:center;background:linear-gradient(135deg,var(--lilac),var(--lavender));
+      color:#333;padding:20px;margin-top:40px;
     }
   </style>
 </head>
 <body>
-
   <header>
     <h1>Noa Eizenkot</h1>
     <p>Industrial Engineering &amp; Management • Data &amp; Information Systems • PMO &amp; ERP</p>
-    <div class="hero-wave" aria-hidden="true">
-      <svg viewBox="0 0 1440 80" preserveAspectRatio="none">
-        <path d="M0,64 C240,16 480,16 720,48 C960,80 1200,80 1440,48 L1440,160 L0,160 Z"></path>
-      </svg>
-    </div>
+    <div class="hero-wave"><svg viewBox="0 0 1440 80" preserveAspectRatio="none"><path d="M0,64 C240,16 480,16 720,48 C960,80 1200,80 1440,48 L1440,160 L0,160 Z"></path></svg></div>
   </header>
 
   <nav>
@@ -118,24 +80,21 @@
     <p>
       B.Sc. graduate in Industrial Engineering and Management with a specialization in Big Data.
       Skilled in SQL, Power BI, and Jupyter Notebook with Python for machine learning projects.
-      Experienced with ERP systems-SAP, Priority to support project management and control.
+      Experienced with ERP systems (SAP, Priority) to support project management and control.
       Passionate about data analysis and integrating it into project management practices.
     </p>
   </section>
 
   <section id="projects">
     <h2>Projects</h2>
-
     <div class="project">
       <h3>CyberEye – CVSS Prediction Model</h3>
       <p>Machine learning model predicting CVSS severity from NVD vulnerability descriptions using Decision Trees, Random Forest, and NLP (TF-IDF).</p>
     </div>
-
     <div class="project">
       <h3>CNN Dog Classification</h3>
       <p>Image classification system for 6 dog breeds using CNN, TensorFlow/Keras, and data-augmentation techniques.</p>
     </div>
-
     <div class="project">
       <h3>ERP SAP Implementation (Course Project)</h3>
       <p>Business process analysis and ERP SAP FI/MM/SD module implementation in a defense-industrial organization.</p>
@@ -154,13 +113,12 @@
   <section id="contact" class="card">
     <h2>Contact</h2>
     <p>Email: <a href="mailto:eizenkotnoal@gmail.com">eizenkotnoal@gmail.com</a></p>
-    <p>LinkedIn: <a href="https://www.linkedin.com/in/noa-eizenkot/" target="_blank" rel="noopener">linkedin.com/in/noa-eizenkot/</a></p>
+    <p>LinkedIn: <a href="https://www.linkedin.com/in/noa-eizenkot/" target="_blank" rel="noopener">linkedin.com/in/noa-eizenkot</a></p>
     <p>GitHub: <a href="https://github.com/NoaEizenkot" target="_blank" rel="noopener">github.com/NoaEizenkot</a></p>
   </section>
 
   <footer>
     <p>&copy; 2025 Noa Eizenkot. All rights reserved.</p>
   </footer>
-
 </body>
 </html>
