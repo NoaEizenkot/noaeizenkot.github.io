@@ -40,27 +40,67 @@
     }
     nav a:hover{background:var(--lavender);color:#2c2c2c;}
 
-    section{padding:50px 20px;max-width:900px;margin:0 auto;text-align:center;}
+    section {
+      padding:50px 20px;
+      max-width:900px;
+      margin:0 auto;
+      text-align:center;
+    }
     section h2{
       font-size:1.6rem;color:#4b3f72;margin-bottom:20px;display:inline-block;
       border-bottom:3px solid var(--lilac);padding-bottom:6px;
     }
-    /* כאן מרכזים את כל הטקסט בתוך הסקשנים */
-    section p,
-    section ul{
-      text-align:center;
+    section p{
+      text-align:left;
       max-width:700px;
       margin:0 auto;
     }
 
-    .card,.project{
-      background:var(--paper);border-radius:12px;padding:24px;margin:18px 0;
-      box-shadow:0 6px 14px rgba(0,0,0,0.05);transition:0.3s;
+    .card {
+      background:var(--paper);
+      border-radius:12px;
+      padding:24px;
+      margin:18px auto;
+      box-shadow:0 6px 14px rgba(0,0,0,0.05);
+      transition:0.3s;
+      max-width:800px;
     }
-    .project:hover{transform:translateY(-3px);box-shadow:0 10px 20px rgba(0,0,0,0.08);}
+
+    .project {
+      background:var(--paper);
+      border-radius:12px;
+      padding:24px;
+      margin:18px auto;
+      box-shadow:0 6px 14px rgba(0,0,0,0.05);
+      transition:0.3s;
+      max-width:800px;
+      text-align:left;
+    }
+    .project:hover{
+      transform:translateY(-3px);
+      box-shadow:0 10px 20px rgba(0,0,0,0.08);
+    }
     .project h3{margin:0 0 8px;color:#4b3f72;}
 
-    ul{list-style-type:square; list-style-position:inside; padding-left:0; }
+    #skills ul{
+      list-style:none;
+      padding:0;
+      margin:14px auto 0;
+      display:flex;
+      gap:10px;
+      flex-wrap:wrap;
+      justify-content:center;
+      max-width:700px;
+    }
+    #skills li{
+      background:#ffffff;
+      border:1px solid #eee;
+      padding:8px 14px;
+      border-radius:999px;
+      box-shadow:0 4px 10px rgba(0,0,0,.04);
+      font-size:0.95rem;
+    }
+
     a{color:#4b3f72;font-weight:600;text-decoration:none;}
     a:hover{color:#6d28d9;}
 
@@ -73,7 +113,7 @@
 <body>
   <header>
     <h1>Noa Eizenkot</h1>
-    <p>Industrial Engineering &amp; Management • Data &amp; Information Systems</p>
+    <p>Industrial Engineering &amp; Management • Data &amp; Information Systems • PMO &amp; ERP</p>
     <div class="hero-wave">
       <svg viewBox="0 0 1440 80" preserveAspectRatio="none">
         <path d="M0,64 C240,16 480,16 720,48 C960,80 1200,80 1440,48 L1440,160 L0,160 Z"></path>
@@ -117,9 +157,17 @@
   <section id="skills" class="card">
     <h2>Skills</h2>
     <ul>
-      <li><strong>Data &amp; Analytics:</strong> SQL, Python (Pandas, Jupyter Notebook), Power BI, Advanced Excel</li>
-      <li><strong>ERP &amp; Information Systems:</strong> SAP, Priority</li>
-      <li><strong>Project Management:</strong> PMO, Gantt, Risk Matrix, RACI, Stakeholder Analysis</li>
+      <li>SQL</li>
+      <li>Python (Pandas, Jupyter Notebook)</li>
+      <li>Power BI</li>
+      <li>Advanced Excel</li>
+      <li>SAP</li>
+      <li>Priority</li>
+      <li>PMO</li>
+      <li>Gantt</li>
+      <li>Risk Matrix</li>
+      <li>RACI</li>
+      <li>Stakeholder Analysis</li>
     </ul>
   </section>
 
